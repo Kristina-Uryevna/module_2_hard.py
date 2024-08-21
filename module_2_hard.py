@@ -10,14 +10,14 @@ def stone():
 first_stone = stone()
 print('Первый камень: ', first_stone)
 
+n = int(input('Введите число первого камня: ', ))
+result = ""
+for i in range(1, n + 1):
+    for j in range(i, n + 1):
+        if n % (i + j) == 0 and j > i:
+            result += str(i) + str(j)
 
-def password(n):
-    result = ""
-    for i in first_stone:
-        for j in range(i):
-            if n % (i + j) == 0:
-                result = str(i) + str(j)
-                return result
-
-result = password(n)
-print('Второй камень: ', result)
+if n != first_stone:
+    print(('Числа не совпадают, введите правильное число первого камня'))
+else:
+    print('Второй камень: ', result)
